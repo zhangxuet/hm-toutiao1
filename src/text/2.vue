@@ -1,12 +1,12 @@
 <template>
     <div>
-        <!-- <el-button type="danger" icon="el-icon-delete" circle></el-button> -->
-        <router-view></router-view>
+        <button :style="{color:yarn}">我是按钮</button>
     </div>
 </template>
 
 <script>
 export default {
+  props: ['yarn']
 }
 </script>
 
