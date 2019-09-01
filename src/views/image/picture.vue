@@ -6,7 +6,7 @@
       <div class="top">
         <el-radio-group v-model="reqParams.collect" size="small" @change="toggleChange">
           <el-radio-button :label="false">全部</el-radio-button>
-          <el-radio-button :label="true">素材</el-radio-button>
+          <el-radio-button :label="true">收藏</el-radio-button>
         </el-radio-group>
         <el-button type="success" size="small" style="float: right" @click="openDialog">添加素材</el-button>
       </div>
@@ -84,6 +84,7 @@ export default {
     },
     openDialog () {
       this.dialogVisible = true
+      this.imageUrl = ''
     },
     delImg (id) {
       this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {

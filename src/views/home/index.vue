@@ -60,12 +60,20 @@
 </template>
 
 <script>
+import eventBus from '@/eventBus'
 import store from '@/store'
 export default {
   created () {
     var user = store.getUser()
     this.name = user.name
     this.photo = user.photo
+
+    eventBus.$on('updateName', (name) => {
+      this.name = name
+    })
+    eventBus.$on('updatePhoto', (photo) => {
+      this.photo = photo
+    })
   },
   data () {
     return {

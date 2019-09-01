@@ -2,7 +2,7 @@ import axios from 'axios'
 import store from '@/store'
 import router from '@/router'
 import JSONBIG from 'json-bigint'
-axios.default.transformResponse = [(data) => {
+axios.defaults.transformResponse = [(data) => {
   try {
     return JSONBIG.parse(data)
   } catch (e) {
